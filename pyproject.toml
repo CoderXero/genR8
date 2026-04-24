@@ -1,0 +1,26 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "genr8"
+version = "0.1.0"
+description = "Safe image and video generation CLI for the xAI Grok API"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "xai-sdk>=1.0.0",
+    "requests>=2.31.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+]
+
+[project.scripts]
+genr8 = "genr8.cli:main"
+genr8-web = "genr8.web:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
